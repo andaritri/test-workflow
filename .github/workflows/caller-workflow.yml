@@ -1,0 +1,11 @@
+name: Caller Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-workflow:
+    uses: andaritri/gh-actions/blob/main/.github/workflows/ci.yml@main
+  
