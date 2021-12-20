@@ -13,9 +13,6 @@ jobs:
               password: zzzzz
             - environment: Prod
               password: xxxxx
-      environment:
-        url: ${{ matrix.password }}
-        name: ${{ matrix.environment }}
       steps:
         - name: deploy
-          run: echo ${{ matrix.environment }}
+          run: echo ${{ matrix.environment }} ${{ matrix.password }}
