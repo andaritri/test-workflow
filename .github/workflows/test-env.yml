@@ -1,0 +1,22 @@
+name: Several Enviroments
+
+on: workflow_dispatch
+
+jobs:
+  deploy-prod:
+      name: Deploy prod
+      runs-on: linux
+      needs: deploy-staging
+      strategy:
+        matrix:
+          include:
+            - environment: Dev
+              url: https://europe.my.service
+            - environment: Prod
+              url: https://asia.my.service
+      environment:
+        url: ${{ matrix.url }}
+        name: ${{ matrix.environment }}
+      steps:
+        - name: deploy
+          run: echo ${{ matrix.environment }}
