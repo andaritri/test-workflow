@@ -15,4 +15,6 @@ jobs:
               password: xxxxx
       steps:
         - name: deploy
-          run: echo ${{ matrix.environment }} ${{ matrix.password }}
+          run: |
+            echo ${{ matrix.environment }}
+            echo ${{ matrix.password }}
