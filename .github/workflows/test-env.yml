@@ -3,10 +3,9 @@ name: Several Enviroments
 on: workflow_dispatch
 
 jobs:
-  deploy-prod:
+  deploy-prod-job:
       name: Deploy prod
-      runs-on: linux
-      needs: deploy-staging
+      runs-on: ubuntu-latest
       strategy:
         matrix:
           include:
