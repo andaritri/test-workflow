@@ -10,11 +10,11 @@ jobs:
         matrix:
           include:
             - environment: Dev
-              url: https://europe.my.service
+              password: zzzzz
             - environment: Prod
-              url: https://asia.my.service
+              password: xxxxx
       environment:
-        url: ${{ matrix.url }}
+        url: ${{ matrix.password }}
         name: ${{ matrix.environment }}
       steps:
         - name: deploy
