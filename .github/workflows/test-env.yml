@@ -6,15 +6,7 @@ jobs:
   deploy-prod-job:
       name: Deploy prod
       runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          include:
-            - environment: Dev
-              password: zzzzz
-            - environment: Prod
-              password: xxxxx
       steps:
         - name: deploy
           run: |
-            echo ${{ matrix.environment }}
-            echo ${{ matrix.password }}
+            echo "Hello world"
