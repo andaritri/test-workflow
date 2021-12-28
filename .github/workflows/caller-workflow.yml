@@ -1,6 +1,10 @@
 name: Caller Workflow
 
-on: workflow_dispatch
+on:
+  workflow_run:
+    workflows: ['Several Enviroments']
+    types:
+      - completed
 
 jobs:
   call-workflow:
