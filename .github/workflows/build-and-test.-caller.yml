@@ -1,7 +1,0 @@
-name: Build and Test
-on:
-  push:
-
-jobs:
-  build_test:
-    uses:  andaritri/gh-actions/.github/workflows/ci.yml@main
