@@ -1,6 +1,14 @@
 name: Caller Workflow
 
-on: workflow_dispatch
+on:
+  workflow_run:
+    branches:
+      - '**'
+    tags:
+      - '**'
+    workflows: ["Build and Test"]
+    types: 
+      - completed
 
 jobs:
   call-workflow:
